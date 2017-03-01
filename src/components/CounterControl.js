@@ -5,12 +5,12 @@ const CounterControl = ({counter, onIncrementByValue, onDecrementByValue,onMulti
     return (
         <div>
             <p> {counter} </p>
-            <button onClick={() => onIncrementByValue()}>+</button>
-            <button onClick={() => onDecrementByValue()}>-</button>
+            <button onClick={() => onIncrementByValue()}>+1</button>
+            <button onClick={() => onDecrementByValue()}>-1</button>
             <p>+/- by value</p>
             <input ref={
                 (node) => {
-                    inputNode = node
+                    inputNode = node;
                 }} type="number" />
             <button onClick={
                 () => {
