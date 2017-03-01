@@ -1,17 +1,37 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
-const CounterControl = ({counter,onIncrement1,onDecrement}) => (
-    <div>
-        <p> {counter} </p>
-        <button onClick={()=>onIncrement1()}>+</button>
-        <button onClick={()=>onDecrement()}>-</button>
-    </div>
-);
+const CounterControl = ({counter, onIncrementByValue, onDecrementByValue,onMultiplyByValue}) => {
+    let inputNode;
+    return (
+        <div>
+            <p> {counter} </p>
+            <button onClick={() => onIncrementByValue()}>+</button>
+            <button onClick={() => onDecrementByValue()}>-</button>
+            <p>+/- by value</p>
+            <input ref={
+                (node) => {
+                    inputNode = node
+                }} type="number" />
+            <button onClick={
+                () => {
+                    onIncrementByValue(parseInt(inputNode.value))
+                }}>+</button>
+            <button onClick={
+                () => {
+                    onDecrementByValue(parseInt(inputNode.value))
+                }}>-</button>
+            <button onClick={
+                () => {
+                    onMultiplyByValue(parseInt(inputNode.value))
+                }}>*</button>
+        </div>)
+};
 
 CounterControl.propTypes = {
-    counter:  PropTypes.number.isRequired,
-    onIncrement1: PropTypes.func.isRequired,
-    onDecrement: PropTypes.func.isRequired
+    counter: PropTypes.number.isRequired,
+    onIncrementByValue: PropTypes.func.isRequired,
+    onDecrementByValue: PropTypes.func.isRequired,
+    onMultiplyByValue: PropTypes.func.isRequired
 }
 
 export default CounterControl;

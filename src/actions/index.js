@@ -21,13 +21,22 @@ export const toggleTodo = (id) => {
   }
 }
 
-export const incrementBy1 = () => {
+export const incrementByValue = (param = 1) => {
   return {
-    type: 'INCREMENT_BY_1',
+    type: 'INCREMENT_BY_VALUE',
+    value: param
   }
 }
-export const decrementBy1 = () => {
+
+export const decrementByValue = (value = 1) => {
   return {
-    type: 'DECREMENT_BY_1',
+    type: 'DECREMENT_BY_VALUE',
+    value
+  }
+}
+export const multiplyByValue = (value) => {
+  return {
+    type: 'MULTIPLY_BY_VALUE',
+    value
   }
 }

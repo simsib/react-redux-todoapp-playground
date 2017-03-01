@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { incrementBy1, decrementBy1 } from '../actions';
+import { incrementByValue,decrementByValue,multiplyByValue } from '../actions';
 import CounterControl from '../components/CounterControl';
 
 const mapStateToProps = (state) => {
@@ -9,11 +9,14 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onIncrement1: () => {
-            dispatch(incrementBy1());
+        onIncrementByValue: (value) => {
+            dispatch(incrementByValue(value));
         },
-        onDecrement: () => {
-            dispatch(decrementBy1());
+        onDecrementByValue: (value) => {
+            dispatch(decrementByValue(value));
+        },
+        onMultiplyByValue: (value) => {
+            dispatch(multiplyByValue(value));
         }
     }
 }
