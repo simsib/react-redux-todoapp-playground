@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const CounterControl = ({counter, onIncrementByValue, onDecrementByValue,onMultiplyByValue}) => {
+const CounterControl = ({counter, onIncrementByValue, onDecrementByValue,onMultiplyByValue,onDivideByValue}) => {
     let inputNode;
     return (
         <div>
@@ -24,6 +24,10 @@ const CounterControl = ({counter, onIncrementByValue, onDecrementByValue,onMulti
                 () => {
                     onMultiplyByValue(parseInt(inputNode.value))
                 }}>*</button>
+            <button onClick={
+                () => {
+                    onDivideByValue(parseInt(inputNode.value))
+                }}>/</button>
         </div>)
 };
 
@@ -31,7 +35,8 @@ CounterControl.propTypes = {
     counter: PropTypes.number.isRequired,
     onIncrementByValue: PropTypes.func.isRequired,
     onDecrementByValue: PropTypes.func.isRequired,
-    onMultiplyByValue: PropTypes.func.isRequired
+    onMultiplyByValue: PropTypes.func.isRequired,
+    onDivideByValue: PropTypes.func.isRequired
 }
 
 export default CounterControl;

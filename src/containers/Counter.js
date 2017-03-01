@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { incrementByValue,decrementByValue,multiplyByValue } from '../actions';
+import { incrementByValue,decrementByValue,multiplyByValue,divideByValue } from '../actions';
 import CounterControl from '../components/CounterControl';
 
 const mapStateToProps = (state) => {
@@ -17,6 +17,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         onMultiplyByValue: (value) => {
             dispatch(multiplyByValue(value));
+        },
+        onDivideByValue: (value) => {
+            dispatch(divideByValue(value));
         }
     }
 }

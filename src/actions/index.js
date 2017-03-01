@@ -40,3 +40,10 @@ export const multiplyByValue = (value) => {
     value
   }
 }
+
+export const divideByValue = (value) => {
+  return {
+    type: 'DIVIDE_BY_VALUE',
+    value
+  }
+}

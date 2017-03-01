@@ -9,7 +9,9 @@ const counter = (state = 100,action) => {
         case 'DECREMENT_BY_VALUE':
             return state - action.value;
         case 'MULTIPLY_BY_VALUE':
-            return state * action.value
+            return state * action.value;
+        case 'DIVIDE_BY_VALUE':
+            return state / action.value;
         default:
             return state;
     }
