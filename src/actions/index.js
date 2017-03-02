@@ -47,3 +47,10 @@ export const divideByValue = (value) => {
     value
   }
 }
+
+export const updateStep = (value) => {
+  return {
+    type: 'UPDATE_STEP',
+    step: value
+  }
+}

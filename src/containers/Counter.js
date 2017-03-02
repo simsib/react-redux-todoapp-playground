@@ -1,25 +1,34 @@
 import { connect } from 'react-redux';
-import { incrementByValue,decrementByValue,multiplyByValue,divideByValue } from '../actions';
+import { incrementByValue,decrementByValue,multiplyByValue,divideByValue,updateStep } from '../actions';
 import CounterControl from '../components/CounterControl';
+
+const returnIntFromInput = (input) => {
+    let result = parseInt(input);
+    return result?result:0;
+}
 
 const mapStateToProps = (state) => {
     return {
-        counter: state.wololoCounter
+        counter: state.wololoCounter,
+        incrementStep: state.incrementStep
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
         onIncrementByValue: (value) => {
-            dispatch(incrementByValue(value));
+            dispatch(incrementByValue(returnIntFromInput(value)));
         },
         onDecrementByValue: (value) => {
-            dispatch(decrementByValue(value));
+            dispatch(decrementByValue(returnIntFromInput(value)));
         },
         onMultiplyByValue: (value) => {
-            dispatch(multiplyByValue(value));
+            dispatch(multiplyByValue(returnIntFromInput(value)));
         },
         onDivideByValue: (value) => {
-            dispatch(divideByValue(value));
+            dispatch(divideByValue(returnIntFromInput(value)));
+        },
+        onUpdateStep: (value) => {
+            dispatch(updateStep(returnIntFromInput(value)));
         }
     }
 }
