@@ -9,7 +9,7 @@ const CounterControl = ({ counter, incrementStep, onIncrementByValue, onDecremen
             <button onClick={() => onDecrementByValue(1)}>-1</button>
             <p>+/- by value</p>
             <input
-                defaultValue={incrementStep}
+                value={incrementStep}
                 onChange={()=>onUpdateStep(parseInt(inputNode.value))}
                 ref={
                     (node) => {
