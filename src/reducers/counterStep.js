@@ -1,4 +1,4 @@
-const counterStep = (state = 1, action) => {
+const counterStep = (state = 2, action) => {
     switch (action.type) {
         case 'UPDATE_STEP':
             return action.step;
