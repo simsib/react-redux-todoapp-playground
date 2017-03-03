@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
 const SimpleCounterControl = ({ counter,  onIncrementByValue, onDecrementByValue }) => {
-    let inputNode;
     return (
         <div>
             <p> {counter} </p>
