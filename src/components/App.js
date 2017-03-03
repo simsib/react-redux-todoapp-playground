@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from './Footer'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
-import CounterContainer from '../containers/Counter';
+import SuperCounterContainer from '../containers/SuperCounter';
 import AllCounters from './AllCounters';
 const App = () => (
   
@@ -10,7 +10,7 @@ const App = () => (
     <AddTodo />
     <VisibleTodoList />
     <Footer />
-    {/*<CounterContainer/>*/}
+    {/*<SuperCounterContainer/>*/}
     <AllCounters></AllCounters>
   </div>
 )
