@@ -1,41 +1,12 @@
-import { connect } from 'react-redux';
-import { incrementByValue,decrementByValue,multiplyByValue,divideByValue,updateStep } from '../actions';
-import CounterControl from '../components/CounterControl';
+import {connect} from 'react-redux';
+import Counter from '../components/Counter';
 
-const returnIntFromInput = (input) => {
-    let result = parseInt(input);
-    return result?result:0;
-}
-
-const mapStateToProps = (state) => {
+const mapState = (state) => {
     return {
-        counter: state.wololoCounter,
-        incrementStep: state.incrementStep
-    }
-}
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onIncrementByValue: (value) => {
-            dispatch(incrementByValue(returnIntFromInput(value)));
-        },
-        onDecrementByValue: (value) => {
-            dispatch(decrementByValue(returnIntFromInput(value)));
-        },
-        onMultiplyByValue: (value) => {
-            dispatch(multiplyByValue(returnIntFromInput(value)));
-        },
-        onDivideByValue: (value) => {
-            dispatch(divideByValue(returnIntFromInput(value)));
-        },
-        onUpdateStep: (value) => {
-            dispatch(updateStep(returnIntFromInput(value)));
-        }
+        counter: state.wololoCounter
     }
 }
 
-const CounterContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(CounterControl);
+const CounterContainer = connect (mapState)(Counter);
 
 export default CounterContainer;
