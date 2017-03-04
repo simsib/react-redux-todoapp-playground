@@ -4,7 +4,7 @@ require("../styles/styles.css");
 
 const Todo = ({ onClick, completed, text }) => (
   <ReactCSSTransitionGroup
-    transitionName="example"
+    transitionName="todo"
     transitionAppear={true}
     transitionAppearTimeout={500}
     transitionLeaveTimeout={500}
