@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-require("style-loader!css-loader!../styles/styles.css");
+require("../styles/styles.css");
 
 class Counter extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class Counter extends React.Component {
                          transitionAppear={true}
                          transitionAppearTimeout={500}
                          transitionLeaveTimeout={500}
-                         transitionEnterTimeout={500}      >
+                         transitionEnterTimeout={500} >
           <p key={"abc"} >
             {counter}
           </p>
