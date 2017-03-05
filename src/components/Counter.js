@@ -1,25 +1,35 @@
 import React, { PropTypes } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ReactDOM from 'react-dom';
+import AnimateOnChange from 'react-animate-on-change';
 require("../styles/styles.css");
 
 class Counter extends React.Component {
+  componentWillUpdate() {
+    // console.log(this.njum);
+    // var node = ReactDOM.findDOMNode(this.njum);
+    // node.classList.add('background');
+    // setTimeout(() => {
+    //   var node = ReactDOM.findDOMNode(this.njum);
+    //   node.classList.remove('background');
+    // },1000)
+  }
   render() {
-    let { counter } = this.props
+    let { counter } = this.props;
     return (
-
-      <div>
-        <ReactCSSTransitionGroup
-          transitionName="example"
-                         transitionAppear={true}
-                         transitionAppearTimeout={500}
-                         transitionLeaveTimeout={500}
-                         transitionEnterTimeout={500} >
-          <p key={"abc"} >
-            {counter}
-          </p>
-        </ReactCSSTransitionGroup>
-        {counter}
-      </div>
+      /*<div>
+        <p className={'background'} ref={(tmp) => this.njum = tmp}>{counter}</p>
+      </div>*/
+      <p>
+        <AnimateOnChange
+          baseClassName='Score'
+          animationClassName='Score--bounce'
+          animate={true}>
+          {counter}
+        </AnimateOnChange>
+        <br/>
+      </p>
+    
     )
   }
 }

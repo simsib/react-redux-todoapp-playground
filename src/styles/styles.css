@@ -32,3 +32,14 @@
   transform: translateY(0px);
   transition: transform .3s ease-out;
 }
+.Score {
+  transform: translateY(0px);
+  position: absolute;
+}
+.Score--bounce{
+  animation:Score-keyframes--bounce .2s ease-out
+}
+@keyframes Score-keyframes--bounce{
+  0%,to {transform: scale(2) translateY(-20px)}
+  100% {transform:translateY(0) scale(1) }
+}
